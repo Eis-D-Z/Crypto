@@ -25,6 +25,9 @@ const buf = Buffer.from(publicKeyArray);
 hashFun.update(buf);
 const hash = hashFun.digest("hex");
 
+// log all the hash
+console.log("The resulting hash is: ", hash);
+
 //3rd step: get the first 40 characters
 let address = hash.slice(0, 40);
 // and prepend the 0x
