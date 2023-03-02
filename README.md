@@ -2,19 +2,21 @@
 
 ## Intro
 
-Cryptography in layman's terms is the science that studies secure communication between distinct parties.
-Secure has implications that are out of the scope of the present.
-Most often is Alice wanting to pass a message to Bob and only to him.
-The way to do this is with a cryptographic function, this function accepts as input the message and a key and outputs a ciphertext, text that is illeglible, also it can accept the ciphertext and a key and output the message. One action is called encrypting, the other is called decrypting.
+Cryptography is the science of secure communication between different parties. It involves the use of cryptographic functions that accept a message and a key as input and output a ciphertext. The ciphertext is unreadable without the correct key.
 
-In this setup the message and the key are the parts that have to remain secure and secret, the ones who have the proper key can read the message, and cryptography also deals with this aspect.
+Cryptography involves two actions; **encryption** and **decryption**.
 
+Alice wants to send Bob a message. By using cryptography, we keep the message secret from anyone else who might intercept it. Alice uses a secret key to encrypt the message "Hello" and then the key and the encrypted message are sent to Bob.
 
-Today cryptographic solutions are divided in two broad categories based on the type of keys:
+Bob receives the encrypted message and the key from Alice. After using the key to decrypt the message, he can see that Alice sent him the message "Hello".
 
-- Symmetric key cryptography, that is the same key encrypts the message into ciphertext and the same key decrypts the ciphertext into plain text message, and here the concern is how Alice and Bob can exchange the key in a secure manner.
+In this example, encryption takes place when Alice uses her secret key to convert the message into a secret code. Decryption takes place when Bob receives the encrypted message and uses the same key to decode it and read the original message.
 
-- Asymmetric key cryptography, or a key pair made of a public and a private key, the public key can only encrypt while the private key can only decrypt. In this setup, a key pair only facilitates one way communication, Alice with the public key can encrypt and Bob with the private can decrypt. The concerns are two, for every additional communication pathway another key pair is required, so a system to reliably distribute the public keys is required, and the security of the private key.
+To maintain the security of the message and the key, they must be kept secret. Symmetric key cryptography and asymmetric key cryptography are the two primary types of cryptographic solutions.
+
+- **Symmetric key cryptography** uses the same key to encrypt and decrypt the message. However, securely exchanging the key between the parties is a concern.
+
+- **Asymmetric key cryptography** uses a key pair consisting of a public key and a private key. The public key is used for encryption, while the private key is used for decryption. However, for each communication pathway, a new key pair is required, and securely distributing the public keys is a challenge. The private key must also be kept secure to prevent unauthorized decryption.
 
 ## Sui
 
