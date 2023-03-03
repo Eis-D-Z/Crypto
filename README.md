@@ -28,11 +28,13 @@ This feature is heavily used by all blockchains, when I want to initiate a trans
 
 Thus on Sui, any transaction, has to be signed, in order to prove the initiator. On Sui if I want to spend Bob's SUI coins, it won't work, because Bob's coins need Bob's private key signature, using my private key's signature will fail.
 
-Every transaction, therefore, has to go through two stages on Sui.
+Every transaction, has to go through two steps, that are usually combined into one by sdk's.  
 
-1) The transaction kind (moveCall, paySui or any other native function that the VM understands), the inputs and the signer (the address of originator of the transaction) must be provided to validators which will return bytecode in base64 (soon base58) called the `transaction bytes`. At this point some preliminary checks have been made that everything is alright and a transaction that can be understood and executed by Sui is ready.
+1) The transaction kind (moveCall, paySui or any other native function that the VM understands), the inputs and the signer (the address of initiator of the transaction) must be serialized and turned into bytecode and encoded in base64 (soon base58) called the `transaction bytes`. This step should be done by the user, sdk's usually do this under the hood.
 
 2) The same signer, as the one provided above, must sign the transaction bytes with their private key in order to confirm their intent, and call the `executeTransaction` method of Sui. At this point the changes entailed by the transaction will be applied on the state and a finality certicate will be returned, this means that the transaction took place on Sui.
+
+Many builders, though, still want to build the transaction (get the transaction bytes) first and execute at a later point in time. Especially exchanges and DeFi's.
 
 ## Public key derivation
 
