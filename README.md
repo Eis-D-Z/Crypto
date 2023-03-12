@@ -4,7 +4,7 @@
 
 Cryptography is the science of secure communication between different parties. It involves the use of cryptographic functions that accept a message and a key as input and output a ciphertext. The ciphertext is unreadable without the correct key.
 
-Cryptography involves two actions; **encryption** and **decryption**.
+Cryptography involves two actions: **encryption** and **decryption**.
 
 Alice wants to send Bob a message. By using cryptography, we keep the message secret from anyone else who might intercept it. Alice uses a secret key to encrypt the message "Hello" and then the key and the encrypted message are sent to Bob.
 
@@ -64,6 +64,7 @@ The main points to remember here are:
 Signing is the cryptographic process through which any message can have it's originator (owner of the private key) declared and subsequently verified by using the known public key.
 
 A programmatic example can be found at signing.js
+My best attempt at offline signing can be found at offline_signing.js.
 
 Key points:
 
